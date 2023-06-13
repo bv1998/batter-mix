@@ -1,5 +1,6 @@
 # Batter Mix
 ![version](https://badgen.net/static/V/1.0.0/)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 This is a mixins scss file and library that will be imported into your project and be able to be included as a way to save time and lines of code. This was created as a personal and workflow project.
 
