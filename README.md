@@ -1,5 +1,5 @@
 # Batter Mix
-![version](https://badgen.net/static/V/1.0.0/)
+![version](https://badgen.net/static/V/1.1.0/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 This is a mixins scss file and library that will be imported into your project and be able to be included as a way to save time and lines of code. This was created as a personal and workflow project.
@@ -82,3 +82,19 @@ This is to add a circle background and have the social icons in the middle
 `$iconColor`: Color of the icon.
 
 `$hoverIconColor`: This is by default set to the $icon color so if you want just the bakcgroudn to change you do not need to put this variable in the mixin. 
+
+### `svgMask`
+
+This is to add an svg mask to a div. If you are okay with all of the defaults the only variable that needs to be passed through is simply the url for the variable `$svg`
+
+```scss 
+@import svgMask($svg, $maskSize, $maskPosition, $maskRepeat);
+```
+
+`$svg`: Put the url to either an svg orpng with transparent bakcground here and this will be the mask.
+
+`$maskSize`: This is by default set to 'contain' but changes the size of the mask in the div just like background-position.
+
+`$maskPosition`: By default is set to 'center center'
+
+`$maskRepeat`: By default set to 'no-repeat'
