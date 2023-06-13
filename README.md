@@ -1,5 +1,5 @@
 # Batter Mix
-
+![version](https://badgen.net/static/V/1.0.0/)
 
 This is a mixins scss file and library that will be imported into your project and be able to be included as a way to save time and lines of code. This was created as a personal and workflow project.
 
