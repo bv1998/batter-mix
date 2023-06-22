@@ -1,24 +1,4 @@
-@mixin backgroundOverlay($backgroundSetting, $overlayOpacity: 100%) {
-    position: relative;
-
-    .wp-block-cover__inner-container,
-    .container {
-        z-index: 5;
-        position: relative;
-    }
-
-    &::after {
-        content: '';
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: $backgroundSetting;
-        opacity: $overlayOpacity;
-        position: absolute;
-        z-index: 3;
-    }
-}
+@import '/src/individual/backgroundOverlay_mixin.scss';
 
 //Icon Position and Button Size is optional conditions
 //Use right facing version of the svg for the button icon
@@ -152,4 +132,11 @@
     -webkit-mask-position: $maskPosition;
     -webkit-mask-size: $maskSize !important;
     -webkit-mask-repeat: $maskRepeat !important;
+}
+
+@mixin fontSettings($fontSize, $fontWeight, $lineHeightPx, $textColor) {
+    font-size: $fontSize + 'px';
+    font-weight: $fontWeight;
+    line-height: calc(#{$lineHeightPx} / #{$fontSize});
+    color: $textColor;
 }
