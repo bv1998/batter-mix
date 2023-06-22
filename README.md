@@ -8,7 +8,7 @@ _Having any problems and want to contribute? Feel free to slack me or email me_.
 
 ### _How to Use_
 
-To use in your project you will need to use the scss function of import. In order to use the code below it must be in the same folder as your `main.scss` file.
+To use in your project you will need to use the scss function of import. In order to use the code below it must be in the same folder as your main .scss file.
 
 ```scss
 @import 'mixins';
