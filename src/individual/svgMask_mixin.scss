@@ -1,0 +1,9 @@
+@mixin svgMask($svg, $maskSize: 'contain', $maskPosition: 'center center', $maskRepeat: 'no-repeat') {
+    mask: $svg;
+    mask-position: $maskPosition;
+    mask-size: $maskSize !important;
+    mask-repeat: $maskRepeat !important;
+    -webkit-mask-position: $maskPosition;
+    -webkit-mask-size: $maskSize !important;
+    -webkit-mask-repeat: $maskRepeat !important;
+}
