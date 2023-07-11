@@ -66,7 +66,7 @@ This is used to style the button of a flickity slider using the button already t
 This is just one line to center the items in div using flex
 
 ```scss
-@import centerFlex();
+@include centerFlex();
 ```
 
 ### `socialCircle`
@@ -74,7 +74,7 @@ This is just one line to center the items in div using flex
 This is to add a circle background and have the social icons in the middle
 
 ```scss
-@import socialCircle( $circleSize, $backgroundColor, $hoverBackground, $iconColor, $hoverIconColor);
+@include socialCircle( $circleSize, $backgroundColor, $hoverBackground, $iconColor, $hoverIconColor);
 ```
 
 `$circleSize`: This is the size of the background of the social icon
@@ -92,7 +92,7 @@ This is to add a circle background and have the social icons in the middle
 This is to add an svg mask to a div. If you are okay with all of the defaults the only variable that needs to be passed through is simply the url for the variable `$svg`
 
 ```scss
-@import svgMask($svg, $maskSize, $maskPosition, $maskRepeat);
+@include svgMask($svg, $maskSize, $maskPosition, $maskRepeat);
 ```
 
 `$svg`: Put the url to either an svg orpng with transparent bakcground here and this will be the mask.
@@ -108,7 +108,7 @@ This is to add an svg mask to a div. If you are okay with all of the defaults th
 This is just to default font settings with the information in the xd
 
 ```scss
-@import fontSettings($fontSize, $fontWeight, $lineHeightPx, $textColor);
+@include fontSettings($fontSize, $fontWeight, $lineHeightPx, $textColor);
 ```
 
 `$fontSize`: Just put the pixel value number, no need to put the px after and then it will run through rem function written by [Michael Palcowski](https://github.com/MichaelPalcowski) so that way it can be in the rem format.
