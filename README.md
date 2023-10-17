@@ -40,28 +40,18 @@ This is used to make an overlay over the bakcground of a div. This will create a
 This is used to style the button of a flickity slider using the button already there and adding an after on the button itself as the icon. To use this you need to have your icon that is used, facing right.
 
 ```scss
-@include flickityButtonIcon(
-  $backgroundColor,
-  $icon,
-  $iconColor,
-  $iconPosition,
-  $buttonSize,
-  $hoverbgColor,
-  $hoverIconColor,
-  $borderColor,
-  $hoverborder
-);
+@include flickityButtonIcon($backgroundColor, $icon, $iconColor, $iconPosition, $buttonSize, $hoverbgColor, $hoverIconColor, $borderColor, $hoverborder);
 ```
 
 `$backgroundColor`: This is the color of the background of the button itself.
 
-`$icon`: This will need to be a svg or png that will be used as a mask. The icon will need to be facing right and will automitcally turn left through the code for the previous button.
+`$icon`: This will need to be a svg or png that will be used as a mask. The icon will need to be facing right and will automatically turn left through the code for the previous button.
 
 `$iconColor`: Color of the icon.
 
-`iconPosition`: The amount of px or percentage that the button is away fro mtheir origin point.
+`iconPosition`: The amount of px or percentage that the button is away from its origin point.
 
-`$buttonSize`: This chnages the size of the circle. The variable is used for both the height and width of the button background.
+`$buttonSize`: This changes the size of the circle. The variable is used for both the height and width of the button background.
 
 `$hoverbgColor`: This by default is set to the `$iconColor` however this can be set so the color of the background changes on hover.
 
@@ -76,7 +66,7 @@ This is used to style the button of a flickity slider using the button already t
 This is just one line to center the items in div using flex
 
 ```scss
-@import centerFlex();
+@include centerFlex();
 ```
 
 ### `socialCircle`
@@ -84,13 +74,7 @@ This is just one line to center the items in div using flex
 This is to add a circle background and have the social icons in the middle
 
 ```scss
-@import socialCircle(
-  $circleSize,
-  $backgroundColor,
-  $hoverBackground,
-  $iconColor,
-  $hoverIconColor
-);
+@include socialCircle( $circleSize, $backgroundColor, $hoverBackground, $iconColor, $hoverIconColor);
 ```
 
 `$circleSize`: This is the size of the background of the social icon
@@ -108,7 +92,7 @@ This is to add a circle background and have the social icons in the middle
 This is to add an svg mask to a div. If you are okay with all of the defaults the only variable that needs to be passed through is simply the url for the variable `$svg`
 
 ```scss
-@import svgMask($svg, $maskSize, $maskPosition, $maskRepeat);
+@include svgMask($svg, $maskSize, $maskPosition, $maskRepeat);
 ```
 
 `$svg`: Put the url to either an svg orpng with transparent bakcground here and this will be the mask.
@@ -124,7 +108,7 @@ This is to add an svg mask to a div. If you are okay with all of the defaults th
 This is just to default font settings with the information in the xd
 
 ```scss
-@import fontSettings($fontSize, $fontWeight, $lineHeightPx, $textColor);
+@include fontSettings($fontSize, $fontWeight, $lineHeightPx, $textColor);
 ```
 
 `$fontSize`: Just put the pixel value number, no need to put the px after and then it will run through rem function written by [Michael Palcowski](https://github.com/MichaelPalcowski) so that way it can be in the rem format.
