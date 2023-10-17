@@ -1,0 +1,180 @@
+@mixin svgMask($svg, $maskSize: 'contain', $maskPosition: 'center center', $maskRepeat: 'no-repeat') {
+    mask: $svg;
+    mask-position: $maskPosition;
+    mask-size: $maskSize !important;
+    mask-repeat: $maskRepeat !important;
+    -webkit-mask: $svg;
+    -webkit-mask-position: $maskPosition;
+    -webkit-mask-size: $maskSize !important;
+    -webkit-mask-repeat: $maskRepeat !important;
+}
+
+@mixin flickityButtonIcon($backgroundColor, $icon, $iconColor: $primary, $iconPosition: 0px, $buttonSize: 44px, $hoverbgColor: $iconColor, $hoverIconColor: $backgroundColor, $borderColor: $backgroundColor, $hoverborder: $hoverbgColor) {
+    svg {
+        display: none;
+    }
+
+    width: $buttonSize;
+    height: $buttonSize;
+
+    &.next {
+        background: $backgroundColor;
+        border: 1px solid $borderColor;
+        position: absolute;
+        right: $iconPosition;
+
+        &::after {
+            content: '';
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            background: $iconColor;
+            -webkit-mask: $icon;
+            mask: $icon;
+            mask-position: center center;
+            mask-size: contain !important;
+            mask-repeat: no-repeat !important;
+            -webkit-mask-position: center center;
+            -webkit-mask-size: contain !important;
+            -webkit-mask-repeat: no-repeat !important;
+            position: absolute;
+        }
+    }
+
+    &.previous {
+        background: $backgroundColor;
+        border: 1px solid $borderColor;
+        position: absolute;
+        left: $iconPosition;
+
+        &::after {
+            content: '';
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            background: $iconColor;
+            -webkit-mask: $icon;
+            transform: rotate(180deg);
+            mask: $icon;
+            mask-position: center center;
+            mask-size: contain !important;
+            mask-repeat: no-repeat !important;
+            -webkit-mask-position: center center;
+            -webkit-mask-size: contain !important;
+            -webkit-mask-repeat: no-repeat !important;
+            position: absolute;
+        }
+    }
+
+    &:disabled {
+        opacity: 1;
+    }
+
+    &:hover {
+        &.next {
+            background: $hoverbgColor !important;
+            border: 1px solid $hoverborder;
+            transition: 0.4s;
+
+            &:after {
+                background: $hoverIconColor;
+                transition: 0.4s;
+            }
+        }
+
+        &.previous {
+            background: $hoverbgColor !important;
+            border: 1px solid $hoverborder;
+            transition: 0.4s;
+
+            &:after {
+                background: $hoverIconColor;
+                transition: 0.4s;
+            }
+        }
+    }
+}
+
+@mixin socialCircle($circleSize, $backgroundColor, $hoverBackground, $iconColor, $hoverIconColor: $iconColor) {
+    a {
+        background: $backgroundColor;
+        width: $circleSize;
+        height: $circleSize;
+        border-radius: 50%;
+        @include centerFlex;
+        transition: 0.5s;
+
+        i {
+            color: $iconColor;
+            font-size: 16px;
+            transition: 0.5s;
+        }
+
+        &:hover {
+            background: $hoverBackground;
+            transition: 0.5s;
+
+            i {
+                color: $hoverIconColor;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+
+@mixin backgroundOverlay($backgroundSetting, $overlayOpacity: 100%, $blendmode: 'normal') {
+    position: relative;
+
+    .wp-block-cover__inner-container,
+    .container {
+        z-index: 5;
+        position: relative;
+    }
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: $backgroundSetting;
+        opacity: $overlayOpacity;
+        position: absolute;
+        mix-blend-mode: $blendmode;
+        z-index: 3;
+    }
+}
+
+@mixin fontSettings($fontSize, $fontWeight, $lineHeightPx, $textColor) {
+    font-size: $fontSize + 'px';
+    font-weight: $fontWeight;
+    line-height: calc(#{$lineHeightPx} / #{$fontSize});
+    color: $textColor;
+}
+
+@mixin linkSettings($fontSize, $fontWeight, $lineHeightPx, $textColor, $hoverColor) {
+    font-size: $fontSize + 'px';
+    font-weight: $fontWeight;
+    line-height: calc(#{$lineHeightPx} / #{$fontSize});
+    color: $textColor;
+    transition: 0.5s;
+
+    &:hover {
+        color: $hoverColor;
+        transition: 0.5s;
+    }
+}
+
+@mixin centerFlex() {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+@mixin backgroundContain($bgpostion: center center) {
+    background-size: contain !important;
+    background-position: $bgpostion !important;
+    background-repeat: no-repeat !important;
+}
